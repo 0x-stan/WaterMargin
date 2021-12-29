@@ -13,7 +13,7 @@ Create a cyberpunk Water Margin, also an inheritage of Chinese cultural treasure
 
 ## team members
 
-- Sanhuo (maroonstar) Smart Contract, Frontend Development;
+- Sanhuo (maroonstar): Smart Contract, Frontend Development
 
 ## how to start
 
