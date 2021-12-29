@@ -1,0 +1,18 @@
+{
+  "name": "dapp-learning-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ dapp-learning-test",
+    "create-local": "graph create DappLearningCollectible --node http://81.69.8.95:8020",
+    "remove-local": "graph remove DappLearningCollectible --node http://81.69.8.95:8020",
+    "deploy-local": "graph deploy DappLearningCollectible --ipfs http://81.69.8.95:5001 --node http://81.69.8.95:8020"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.21.0",
+    "@graphprotocol/graph-ts": "0.20.0"
+  }
+}
