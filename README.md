@@ -4,8 +4,8 @@ Create a cyberpunk Water Margin, also an inheritage of Chinese cultural treasure
 
 ## white paper
 
-- [WaterMargin DAO white paper](./whitepaper/whitepaper.pdf)
-- [WaterMargin DAO white paper-cn](./whitepaper/whitepaper-cn.pdf)
+- [WaterMargin DAO white paper](./whitepaper/WaterMargin-DAO-white-paper.pdf)
+- [WaterMargin DAO white paper-cn](./whitepaper/WaterMargin-DAO-white-paper-cn.pdf)
 
 ## demo website
 
