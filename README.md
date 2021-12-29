@@ -11,6 +11,10 @@ Create a cyberpunk Water Margin, also an inheritage of Chinese cultural treasure
 
 - [demo website link](http://81.69.8.95/)
 
+## team members
+
+- Sanhuo (maroonstar) Smart Contract, Frontend Development;
+
 ## how to start
 
 - install node_modules
