@@ -64,74 +64,80 @@ yarn deploy
   通过 thegraph 部署的 subgrpah 只能部署在主网 和 rinkeby 网络, 如果需要使用其他的网络, 则需要自己搭建 graph 服务. 下面讲解下如何通过 thegraph 部署 subgraph - 创建 subgraph  
    在 thegraph 官网上创建一个 subgraph, 假设 subgraph 名字为 DappLearningCollectible
 
-      - install graph-cli
-        ```shell
-        yarn global add @graphprotocol/graph-cli
-        ```
+  - install graph-cli
 
-        - init subgraph
-        ```shell
-        graph init --studio DappLearningCollectible
+    ```shell
+    yarn global add @graphprotocol/graph-cli
+    ```
 
-        ## 在选择网络的时候选择 rinkeby
-        ```
+  - init subgraph
 
-      - subgraph certification
-        ```shell
-        graph auth  --studio fc72b2●●●●●●●●476024
-        ```
+    ```shell
+    graph init --studio DappLearningCollectible
 
-      - copy and modify config file
-        复制 dapp-learning-test/src/mapping.ts , dapp-learning-test/schema.graphql , dapp-learning-test/subgraph.yaml 到对应的目录下, 同时修改如下配置
-        ```shell
-        ## subgraph.yaml 中的 address 和 startBlock
-        source:
-            address: "0xe1f5CCe0e39E6F3Fec75D29BCb32821A98d8b432"
-            abi: DappLearningCollectible
-            startBlock: 9737148
+    ## 在选择网络的时候选择 rinkeby
+    ```
 
-        ## mappting.ts 中的 auctionAddr
-        const auctionAddr = Address.fromHexString(
-            "0xAE8FF5372fE7beb7eBC515ebe19670afd9045bf0"
-        );
-        ```
+  - subgraph certification
 
-      - compile files
-        ```shell
-        cd DappLearningCollectible
-        graph codegen && graph build
-        ```
+    ```shell
+    graph auth  --studio fc72b2●●●●●●●●476024
+    ```
 
-      - deploy
-        ```shell
-        graph deploy --studio DappLearningCollectible
-        ```
+  - copy and modify config file
+    复制 dapp-learning-test/src/mapping.ts , dapp-learning-test/schema.graphql , dapp-learning-test/subgraph.yaml 到对应的目录下, 同时修改如下配置
+
+    ```shell
+    ## subgraph.yaml 中的 address 和 startBlock
+    source:
+        address: "0xe1f5CCe0e39E6F3Fec75D29BCb32821A98d8b432"
+        abi: DappLearningCollectible
+        startBlock: 9737148
+
+    ## mappting.ts 中的 auctionAddr
+    const auctionAddr = Address.fromHexString(
+        "0xAE8FF5372fE7beb7eBC515ebe19670afd9045bf0"
+    );
+    ```
+
+  - compile files
+
+    ```shell
+    cd DappLearningCollectible
+    graph codegen && graph build
+    ```
+
+  - deploy
+
+    ```shell
+    graph deploy --studio DappLearningCollectible
+    ```
 
 - get graph URL  
   graph depoloyed, then get info.
 
-    ```shell
-    Subgraph endpoints:
-    Queries (HTTP):     https://api.studio.thegraph.com/query/1542/dapp-learning-test/v0.1.0
-    Subscriptions (WS): https://api.studio.thegraph.com/query/1542/dapp-learning-test/v0.1.0
-    ```
+  ```shell
+  Subgraph endpoints:
+  Queries (HTTP):     https://api.studio.thegraph.com/query/1542/dapp-learning-test/v0.1.0
+  Subscriptions (WS): https://api.studio.thegraph.com/query/1542/dapp-learning-test/v0.1.0
+  ```
 
 - copy environment variables
 
-    ```shell
-    cd react
-    cp .env.example .env
+  ```shell
+  cd react
+  cp .env.example .env
 
-    ## 然后在其中配置 REACT_APP_PROVIDER 和 REACT_APP_GRAPHQL, 其中 REACT_APP_GRAPHQL 值为上一步 graph 部署成功后显示的值
-    REACT_APP_PROVIDER
-    REACT_APP_GRAPHQL
-    ```
+  ## 然后在其中配置 REACT_APP_PROVIDER 和 REACT_APP_GRAPHQL, 其中 REACT_APP_GRAPHQL 值为上一步 graph 部署成功后显示的值
+  REACT_APP_PROVIDER
+  REACT_APP_GRAPHQL
+  ```
 
 - start react
 
-    ```
-    yarn start
-    ```
+  ```
+  yarn start
+  ```
 
 - Mint NFT
   只有在 packages/hardhat/scripts/addressList.json 文件中的账户地址才能进行 Mint 操作.
