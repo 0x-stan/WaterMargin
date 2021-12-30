@@ -14,6 +14,7 @@ Create a cyberpunk Water Margin, also an inheritage of Chinese cultural treasure
 ## team members
 
 - Sanhuo (maroonstar): Smart Contract, Frontend Development
+- Hsiang (Hsiang): Smart Contract, Frontend Development
 - Xiath (sansx): The Graph, Frontend Development
 - KellyX (xiepaopaoer): Project Manager, Product Experience Officer
 
